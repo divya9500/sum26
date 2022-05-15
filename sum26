@@ -1,0 +1,34 @@
+# Write a program to sorting String array
+
+package Assessment;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class StringSorting {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        String str[]=new String[5];
+        System.out.println("Enter the String:");
+        for(int i=0;i<str.length;i++){
+            str[i]=s.next();
+        }
+        System.out.println("original array is: "+ Arrays.toString(str));
+        String temp="";
+        for(int i=0;i<str.length;i++ ){
+            for(int j=i+1;j<=str.length-1;j++){
+                if(str[i] .compareTo(str[j])>0){
+                    temp=str[i];
+                    str[i]=str[j];
+                    str[j]=temp;
+                }
+
+            }
+        }
+        System.out.println("After sorting:"+Arrays.toString(str));
+
+        //by sorting in-bulid functions
+        Arrays.sort(str);
+        System.out.println(Arrays.toString(str));
+    }
+}
